@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Vetor Objeto
+        
+        var times = [
+            { nome:"Corinthians", anoFundacao:1910},
+            { nome:"Palmeiras", anoFundacao:1914},
+            { nome:"Santos", anoFundacao:1912}
+        ];
+
+        times.push({nome:"São Paulo", anoFundacao:1910});
+
+        var nomeTime = prompt("Insira o nome:");
+        var fundacao = Number(prompt("Insira o ano:"));
+        times.push({nome:nomeTime,anoFundacao:fundacao});
+
+        document.writeln("<h1>Lista de times</h1>")
+            times.forEach(time =>{
+                document.writeln(`Nome:${time.nome} - Ano de Fundação:${time.anoFundacao} <br>`);
+            });
+
+    </script>
+</body>
+</html>
