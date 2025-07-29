@@ -2,7 +2,7 @@
 // dentro da class iremos definir as características/atributos
 class Cliente{
     // metódo/função construtor
-    // tem a função de colocar "requisitos" dentro da chama da classe
+    // tem a função de colocar "requisitos" dentro da chamada classe
     constructor(nome,email,dataNascimento)
     {
     // this referencia a informação para a própria classe
