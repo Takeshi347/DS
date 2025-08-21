@@ -1,14 +1,17 @@
 function buscarPokemon(){
+    //nome da variavel que vai armazenar o pokemon
     let pkm_name = document.querySelector("#pkm_name").value;
 
-    
-fetch(`https://pokeapi.co/api/v2/pokemon/ditto/${pkm_name}`)
+//serve para realizar requisições HTTP assíncronas,
+// permitindo que sua aplicação web busque recursos de um servidor ou de outras fontes externas
+fetch(`https://pokeapi.co/api/v2/pokemon/${pkm_name}`)
     .then(resposta => {
         if(!resposta.ok){
         throw new Error("Pokemon não encontrado");
         }
         return resposta.json();
         })
+        //pega os dados do pokemon
         .then(dados => {
             const  p = new Pokemon();
             p.nome = dados.name;
@@ -17,14 +20,16 @@ fetch(`https://pokeapi.co/api/v2/pokemon/ditto/${pkm_name}`)
             p.sprite = dados.sprites.front_default;
             // console.log(p.exibirDados());
 
-            document.getElementById("resultado").innerHMTL = 
-            `<h1>${p.nome}</h1> 
-            <li>Tipo:${p.tipo} </li>
-            <li>Peso:${p.peso} </li>
-            </ul>
-            <img src="${p.sprite}>`
+            //Resposta do servidor com nome,tipo, peso e foto/sprite
+    document.getElementById("resultado").innerHTML = `<h1>${p.nome}</h1> 
+           <p>Tipo:${p.tipo} </p>
+            <p>Nome:${p.nome} </p>
+            <p>Peso:${p.peso} </p>
+            <img src="${p.sprite}>`;
 
         })
+        //senão pegar o alerta de erro
+        //se der erro exibe a mensagem de erro
         .catch(erro => {
             alert(erro.message);
         })

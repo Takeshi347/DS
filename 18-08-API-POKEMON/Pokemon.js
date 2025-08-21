@@ -1,4 +1,5 @@
 class Pokemon{
+        // pegado os topicos do pokemon
     set nome(valor){
         this._nome = valor;
     }
@@ -30,11 +31,12 @@ class Pokemon{
         return this._sprite;
     }
 
+    //funcao que exibe os dados do pokemon
     exibirDados(){
-        return `${this._nome} 
-        - ${this._tipo} 
-        - ${this._peso} 
-        - ${this._sprite}`;
+        return ` O nome do seu pokemon é: ${this._nome} 
+        - O tipo do seu pokemon é: ${this._tipo} 
+        - Os kilos do seu pokemon é: ${this._peso} 
+        - A imagen do seu pokemon: <br> ${this._sprite}`;
 
         
     }
